@@ -3,8 +3,11 @@
 ## **Modul 1 - HTML & CSS Basic**
 
 **Anggota Kelompok:**
+
 **Nama/NRP: [Akhdan Hafiz Anugrah/5027251094]**
+
 **Nama/NRP: [Wahyu Yoga Wicaksono/5027251103]**
+
 **Nama/NRP: [Atik Putri Matulina/5027251128]**
 
 ## 🚀 Deskripsi Proyek
