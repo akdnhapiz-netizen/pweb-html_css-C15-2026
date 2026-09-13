@@ -25,7 +25,6 @@ ul { list-style: none; }
     --transition: 0.25s ease;
 }
 
-/* ---------- 3. LAYOUT SPLIT-SCREEN (GRID UTAMA) ---------- */
 body {
     display: grid;
     grid-template-columns: var(--sidebar-width) 1fr;
@@ -64,7 +63,6 @@ header section#beranda img {
     box-shadow: var(--shadow-lg);
 }
 
-/* ---------- 6. NAVIGASI (FLEXBOX + PSEUDO-CLASS) ---------- */
 header nav ul { display: flex; flex-direction: column; gap: 0.35rem; }
 
 header nav a {
@@ -99,7 +97,13 @@ header nav a:focus {
 header nav a:hover::before,
 header nav a:focus::before { height: 60%; }
 
-header section#beranda ul { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.1rem; }
+header section#beranda ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1.1rem;
+}
 
 header section#beranda ul li a {
     display: flex;
@@ -117,9 +121,12 @@ header section#beranda ul li a {
     transition: transform var(--transition), background var(--transition), border-color var(--transition), color var(--transition);
 }
 
-header section#beranda ul li a:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+header section#beranda ul li a:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
 
-/* Ikon bulat gradient khas Instagram */
+/* Instagram */
 header section#beranda ul li:nth-child(1) a::before {
     content: "";
     width: 10px; height: 10px;
@@ -127,12 +134,12 @@ header section#beranda ul li:nth-child(1) a::before {
     flex-shrink: 0;
     background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
 }
+
 header section#beranda ul li:nth-child(1) a:hover {
     background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
     border-color: transparent;
 }
 
-/* Ikon segitiga "play" khas YouTube */
 header section#beranda ul li:nth-child(2) a::before {
     content: "";
     width: 0; height: 0;
@@ -141,28 +148,29 @@ header section#beranda ul li:nth-child(2) a::before {
     border-width: 5px 0 5px 8px;
     border-color: transparent transparent transparent #FF0000;
 }
+
 header section#beranda ul li:nth-child(2) a:hover {
     background-color: #FF0000;
     border-color: #FF0000;
 }
+
 header section#beranda ul li:nth-child(2) a:hover::before {
     border-color: transparent transparent transparent var(--white);
 }
 
-/* Ikon "X" khas X/Twitter, hover jadi putih-kontras */
 header section#beranda ul li:nth-child(3) a::before {
     content: "\2715";
     font-size: 0.7rem;
     line-height: 1;
     flex-shrink: 0;
 }
+
 header section#beranda ul li:nth-child(3) a:hover {
     background-color: var(--white);
     color: var(--dark);
     border-color: var(--white);
 }
 
-/* ---------- 8. TOMBOL / CALL TO ACTION ---------- */
 button {
     font-weight: 700;
     font-size: 0.92rem;
@@ -178,13 +186,32 @@ button {
     width: 100%;
 }
 
-button:hover { background-color: var(--accent-dark); transform: translateY(-2px); box-shadow: var(--shadow-lg); }
-button:focus { outline: 3px solid var(--accent-soft); outline-offset: 2px; }
+button:hover {
+    background-color: var(--accent-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
 
-/* ---------- 9. KONTEN UTAMA & TIPOGRAFI ---------- */
-main { grid-area: main; padding: 3.5rem 4rem; max-width: 980px; }
+button:focus {
+    outline: 3px solid var(--accent-soft);
+    outline-offset: 2px;
+}
+
+main {
+    grid-area: main;
+    padding: 3.5rem 4rem;
+    max-width: 980px;
+}
+
 main section { margin-bottom: 3.2rem; }
-main h2 { font-size: 1.9rem; font-weight: 700; margin-bottom: 1rem; padding-bottom: 0.6rem; position: relative; }
+
+main h2 {
+    font-size: 1.9rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    padding-bottom: 0.6rem;
+    position: relative;
+}
 
 main h2::after {
     content: "";
@@ -196,9 +223,14 @@ main h2::after {
 }
 
 main p { color: var(--gray); max-width: 68ch; }
-main hr { border: none; height: 1px; background: linear-gradient(to right, var(--border), transparent); margin: 2.5rem 0; }
 
-/* ---------- 10. ASIDE "FAKTA CEPAT" ---------- */
+main hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, var(--border), transparent);
+    margin: 2.5rem 0;
+}
+
 aside {
     background-color: var(--white);
     border: 1px solid var(--border);
@@ -213,7 +245,6 @@ aside h3 { font-size: 1rem; margin-bottom: 0.6rem; }
 aside ul { padding-left: 1.1rem; color: var(--gray); font-size: 0.92rem; list-style: disc; }
 aside li + li { margin-top: 0.35rem; }
 
-/* ---------- 11. GRID KARTU PORTOFOLIO ---------- */
 #portofolio {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -233,7 +264,11 @@ aside li + li { margin-top: 0.35rem; }
     transition: transform var(--transition), box-shadow var(--transition);
 }
 
-#portofolio article:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); z-index: 2; }
+#portofolio article:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    z-index: 2;
+}
 
 #portofolio article::before {
     content: "0" counter(card);
@@ -295,7 +330,12 @@ aside li + li { margin-top: 0.35rem; }
     margin-top: 1.5rem;
 }
 
-#kontak label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; }
+#kontak label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+}
 
 #kontak input,
 #kontak select,
@@ -322,12 +362,21 @@ aside li + li { margin-top: 0.35rem; }
     background-color: var(--white);
 }
 
-fieldset { border: 1.5px dashed var(--border); border-radius: var(--radius-sm); padding: 1.25rem; display: grid; gap: 1rem; }
+fieldset {
+    border: 1.5px dashed var(--border);
+    border-radius: var(--radius-sm);
+    padding: 1.25rem;
+    display: grid;
+    gap: 1rem;
+}
+
 legend { font-weight: 700; color: var(--accent); padding: 0 0.5rem; }
 #kontak button { justify-self: start; }
+
 input[type="checkbox"],
 input[type="radio"] { accent-color: var(--accent); }
 
+/* ---------- FOOTER ---------- */
 footer {
     grid-area: footer;
     background-color: var(--dark);
@@ -344,88 +393,6 @@ footer {
 footer nav ul { display: flex; gap: 1.25rem; }
 footer nav a { text-decoration: none; transition: color var(--transition); }
 footer nav a:hover { color: var(--accent); }
-
-.cv-photo-wrap { position: relative; width: fit-content; margin: 0 auto; }
-.cv-photo { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 4px solid var(--accent); }
-
-.cv-badge {
-    position: absolute;
-    bottom: 4px; right: 4px; z-index: 2;
-    background-color: var(--accent);
-    color: var(--white);
-    font-size: 0.65rem; font-weight: 700;
-    padding: 0.3rem 0.6rem;
-    border-radius: 999px;
-    border: 2px solid var(--dark);
-}
-
-.cv-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1.25rem; margin: 1.75rem 0; }
-
-.stat-item {
-    background-color: var(--white);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-md);
-    padding: 1.25rem 1rem;
-    text-align: center;
-    box-shadow: var(--shadow-sm);
-    transition: transform var(--transition);
-}
-
-.stat-item:hover { transform: translateY(-4px); }
-.stat-number { display: block; font-size: 1.9rem; font-weight: 800; color: var(--accent); }
-.stat-label { display: block; font-size: 0.78rem; color: var(--gray); margin-top: 0.25rem; }
-.stat-item:nth-child(odd) .stat-number { color: var(--accent); }
-.stat-item:nth-child(even) .stat-number { color: var(--dark); }
-
-.timeline { position: relative; border-left: 3px solid var(--border); margin: 1.5rem 0 1.5rem 0.5rem; padding-left: 2rem; }
-.timeline-item { position: relative; padding-bottom: 2.2rem; }
-.timeline-item:last-child { padding-bottom: 0; }
-
-.timeline-item::before {
-    content: "";
-    position: absolute;
-    left: -2.44rem; top: 0.3rem;
-    width: 14px; height: 14px;
-    background-color: var(--white);
-    border: 3px solid var(--accent);
-    border-radius: 50%;
-    box-shadow: var(--shadow-sm);
-}
-
-.timeline-date {
-    display: inline-block;
-    font-size: 0.75rem; font-weight: 700;
-    color: var(--accent);
-    background-color: var(--accent-soft);
-    padding: 0.2rem 0.65rem;
-    border-radius: 999px;
-    margin-bottom: 0.4rem;
-}
-
-.timeline-item h3 { font-size: 1.05rem; margin-bottom: 0.3rem; }
-.timeline-item p { font-size: 0.88rem; }
-.timeline-item:nth-child(even) h3 { color: var(--accent-dark); }
-
-.skill-matrix { display: grid; gap: 1rem; margin: 1.5rem 0; }
-.skill-item label { display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; }
-
-.skill-item progress {
-    width: 100%; height: 10px;
-    -webkit-appearance: none;
-    appearance: none;
-    border: none;
-    border-radius: 999px;
-    overflow: hidden;
-    background-color: var(--border);
-}
-
-.skill-item progress::-webkit-progress-bar { background-color: var(--border); border-radius: 999px; }
-.skill-item progress::-webkit-progress-value { background: linear-gradient(to right, var(--accent-dark), var(--accent)); border-radius: 999px; }
-.skill-item progress::-moz-progress-bar { background: linear-gradient(to right, var(--accent-dark), var(--accent)); border-radius: 999px; }
-
-.hide-on-mobile { display: block; }
-a:focus-visible,
-button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
 
 @media (max-width: 1024px) {
     :root { --sidebar-width: 260px; }
@@ -448,13 +415,9 @@ button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
     #portofolio { grid-template-columns: 1fr; }
     #kontak form { padding: 1.5rem; }
     footer { flex-direction: column; text-align: center; padding: 1.5rem 1.25rem; }
-    .cv-stats { grid-template-columns: repeat(2, 1fr); }
-    .hide-on-mobile { display: none; }
 }
 
 @media (max-width: 400px) {
     header section#beranda img { width: 110px; height: 110px; }
     header h1 { font-size: 1.25rem; }
-    .cv-stats { grid-template-columns: 1fr; }
 }
-
